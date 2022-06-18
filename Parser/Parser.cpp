@@ -12,25 +12,28 @@ Parser::Parser(std::string inputFile) {
     nlohmann::json configJson;
     file >> configJson;
 
-    this->output.projectName = configJson["name"];
-    this->output.compiler = configJson["compiler"];
-    this->output.compilerFlags = configJson["compilerFlags"];
-    //this->output.sources = configJson["sources"];
+    try { this->output.projectName = configJson["name"]; } catch (std::exception &e) {}
+    try { this->output.compiler = configJson["compiler"]; } catch (std::exception &e) {}
+    try { this->output.compilerFlags = configJson["compilerFlags"]; } catch (std::exception &e) {}
+    try { this->output.binaryName = configJson["binaryName"]; } catch (std::exception &e) {}
 
-    nlohmann::json authors = configJson["authors"];
+    try
+    {
+        nlohmann::json authors = configJson["authors"];
 
-    for (auto author = authors.begin(); author != authors.end(); author++) {
-        this->output.projectAuthors.push_back(author.value());
-    }
+        for (auto author = authors.begin(); author != authors.end(); author++) {
+            this->output.projectAuthors.push_back(author.value());
+        }
+    } catch (std::exception &e) {}
 
-    nlohmann::json sources = configJson["sources"];
+    try
+    {
+        nlohmann::json sources = configJson["sources"];
 
-    for (auto source = sources.begin(); source != sources.end(); source++) {
-        this->output.sources.push_back(source.value());
-
-    }
+        for (auto source = sources.begin(); source != sources.end(); source++) {
+            this->output.sources.push_back(source.value());
+        }
+    } catch (std::exception &e) {}
 }
 
-Parser::~Parser() {
-
-}
+Parser::~Parser() = default;

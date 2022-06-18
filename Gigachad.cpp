@@ -4,6 +4,7 @@
 
 #include "Builder/Builder.h"
 #include "Parser/Parser.h"
+#include "Installer/Installer.h"
 
 #include "Gigachad.h"
 
@@ -25,18 +26,17 @@ Gigachad::Gigachad(int argc, char *argv[]) {
     GigachadParsed parsedProjectFile = parser.getOutput();
 
     if (argc > 1) {
-        if (strcmp(argv[1], "build") == 0) {
+        if (strcmp(argv[1], "build") == 0)
             Builder builder(parsedProjectFile);
+        else if (strcmp(argv[1], "install") == 0) {
+            Builder builder(parsedProjectFile);
+            Installer installer(parsedProjectFile);
         }
-        else if (strcmp(argv[1], "help") == 0) {
+        else if (strcmp(argv[1], "help") == 0)
             this->printHelp();
-        }
     } else {
         this->printHelp();
     }
 }
 
-Gigachad::~Gigachad() {
-
-}
-
+Gigachad::~Gigachad() = default;

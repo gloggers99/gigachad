@@ -4,6 +4,8 @@
 
 #include "Builder.h"
 
+#include "../Colors.h"
+
 std::string Builder::assembleCompileCommand() {
     std::string outputStr;
 
@@ -15,7 +17,7 @@ std::string Builder::assembleCompileCommand() {
     }
     outputStr.append(this->project.compilerFlags);
     outputStr.append(" -o ");
-    outputStr.append(this->project.projectName);
+    outputStr.append(this->project.binaryName);
 
 
     return outputStr;
@@ -24,8 +26,8 @@ std::string Builder::assembleCompileCommand() {
 Builder::Builder(GigachadParsed project) {
     this->project = project;
 
+    std::cout << "Compiling " << GREEN << this->project.projectName << RESET << " (" << this->assembleCompileCommand() << ")\n";
     system(this->assembleCompileCommand().c_str());
 }
 
-Builder::~Builder() {
-}
+Builder::~Builder() = default;

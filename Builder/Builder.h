@@ -6,6 +6,7 @@
 #define GIGACHAD_BUILDER_H
 
 #include <cstdlib>
+#include <iostream>
 
 #include "../Parser/GigachadParsed.h"
 

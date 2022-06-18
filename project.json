@@ -9,6 +9,8 @@
     "main.cpp",
     "Gigachad.cpp",
     "Builder/Builder.cpp",
-    "Parser/Parser.cpp"
-  ]
+    "Parser/Parser.cpp",
+    "Installer/Installer.cpp"
+  ],
+  "binaryName": "gigachad"
 }
