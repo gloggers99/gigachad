@@ -12,7 +12,6 @@ void Gigachad::printHelp() {
     std::cout << "Gigachad v0.1-alpha\n"
               << "RTFM lmao\n";
 
-    // TODO: make man page
 }
 
 Gigachad::Gigachad(int argc, char *argv[]) {
