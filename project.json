@@ -1,0 +1,12 @@
+{
+  "name": "gigachad",
+  "authors": [
+    "gloggers"
+  ],
+  "compiler": "g++",
+  "compilerFlags": "-Ofast",
+  "sources": [
+    "main.cpp",
+    "Gigachad.cpp"
+  ]
+}

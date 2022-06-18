@@ -1,0 +1,6 @@
+# ninja log v5
+0	547	1655517485721982148	CMakeFiles/gigachad.dir/Gigachad.cpp.o	433a05929fae9156
+0	487	1655517485662982148	CMakeFiles/gigachad.dir/main.cpp.o	26b2535b0cbecb20
+0	18	1655558921291991236	build.ninja	d3c9500b8eb2efbf
+306	357	1655518275599979135	gigachad	a1bf43110fac7ed9
+1	306	1655518275549979135	CMakeFiles/gigachad.dir/Parser/Parser.cpp.o	49fa90a765f1ac59
