@@ -2,6 +2,7 @@
 // Created by lucas on 6/17/22.
 //
 
+#include "Builder/Builder.h"
 #include "Parser/Parser.h"
 
 #include "Gigachad.h"
@@ -23,18 +24,16 @@ Gigachad::Gigachad(int argc, char *argv[]) {
     Parser parser("project.json");
     GigachadParsed parsedProjectFile = parser.getOutput();
 
-    std::cout << parsedProjectFile.projectName << "\n"
-              << parsedProjectFile.projectAuthor << "\n"
-              << parsedProjectFile.compiler << "\n"
-              << parsedProjectFile.compilerFlags  << "\n"
-              << parsedProjectFile.sources << "\n";
-
-    /*
     if (argc > 1) {
-
+        if (strcmp(argv[1], "build") == 0) {
+            Builder builder(parsedProjectFile);
+        }
+        else if (strcmp(argv[1], "help") == 0) {
+            this->printHelp();
+        }
     } else {
         this->printHelp();
-    }*/
+    }
 }
 
 Gigachad::~Gigachad() {

@@ -5,12 +5,14 @@
 #ifndef GIGACHAD_GIGACHADPARSED_H
 #define GIGACHAD_GIGACHADPARSED_H
 
+#include <vector>
 #include <string>
 
 struct GigachadParsed {
-    std::string projectName, projectAuthor;
+    std::string projectName;
     std::string compiler, compilerFlags;
-    std::string sources;
+    std::vector<std::string> sources;
+    std::vector<std::string> projectAuthors;
 };
 
 #endif //GIGACHAD_GIGACHADPARSED_H

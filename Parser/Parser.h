@@ -8,6 +8,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
 #include <nlohmann/json.hpp>
 
 #include "GigachadParsed.h"

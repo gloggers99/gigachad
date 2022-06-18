@@ -7,6 +7,8 @@
   "compilerFlags": "-Ofast",
   "sources": [
     "main.cpp",
-    "Gigachad.cpp"
+    "Gigachad.cpp",
+    "Builder/Builder.cpp",
+    "Parser/Parser.cpp"
   ]
 }
