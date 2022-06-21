@@ -16,6 +16,7 @@ Parser::Parser(std::string inputFile) {
     try { this->output.compiler = configJson["compiler"]; } catch (std::exception &e) {}
     try { this->output.compilerFlags = configJson["compilerFlags"]; } catch (std::exception &e) {}
     try { this->output.mainBinary = configJson["mainBinary"]; } catch (std::exception &e) {}
+    try { this->output.compilerFormat = configJson["compilerFormat"]; } catch (std::exception &e) {}
 
     try {
         nlohmann::json binaryNames = configJson["binaryNames"];

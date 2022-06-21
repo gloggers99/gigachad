@@ -24,6 +24,11 @@ Installer::Installer(GigachadParsed project) {
 
         path.append(binary);
 
+        if (std::filesystem::exists(path)) {
+            std::cout << "Removing " << RED << path << RESET << "\n";
+            std::filesystem::remove(path);
+        }
+
         std::cout << "Installing " << GREEN << binary << RESET << " to " << path << "\n";
         std::filesystem::copy(binaryLocation, path);
     }
