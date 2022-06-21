@@ -13,7 +13,8 @@ struct GigachadParsed {
     std::string compiler, compilerFlags;
     std::vector<std::string> sources;
     std::vector<std::string> projectAuthors;
-    std::string binaryName;
+    std::vector<std::string> binaryNames;
+    std::string mainBinary;
 };
 
 #endif //GIGACHAD_GIGACHADPARSED_H

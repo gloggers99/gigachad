@@ -16,6 +16,11 @@ class Installer {
 private:
     GigachadParsed project;
 
+    void fail(std::string msg) {
+        std::cout << RED << "Error during installing: " << RESET << msg << "\n";
+        exit(1);
+    }
+
 public:
     Installer(GigachadParsed project);
     ~Installer();

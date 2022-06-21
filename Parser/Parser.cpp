@@ -15,10 +15,17 @@ Parser::Parser(std::string inputFile) {
     try { this->output.projectName = configJson["name"]; } catch (std::exception &e) {}
     try { this->output.compiler = configJson["compiler"]; } catch (std::exception &e) {}
     try { this->output.compilerFlags = configJson["compilerFlags"]; } catch (std::exception &e) {}
-    try { this->output.binaryName = configJson["binaryName"]; } catch (std::exception &e) {}
+    try { this->output.mainBinary = configJson["mainBinary"]; } catch (std::exception &e) {}
 
-    try
-    {
+    try {
+        nlohmann::json binaryNames = configJson["binaryNames"];
+
+        for (auto binary = binaryNames.begin(); binary != binaryNames.end(); binary++) {
+            this->output.binaryNames.push_back(binary.value());
+        }
+    } catch (std::exception &e) {}
+
+    try {
         nlohmann::json authors = configJson["authors"];
 
         for (auto author = authors.begin(); author != authors.end(); author++) {
@@ -26,8 +33,7 @@ Parser::Parser(std::string inputFile) {
         }
     } catch (std::exception &e) {}
 
-    try
-    {
+    try {
         nlohmann::json sources = configJson["sources"];
 
         for (auto source = sources.begin(); source != sources.end(); source++) {

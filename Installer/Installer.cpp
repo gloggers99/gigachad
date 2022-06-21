@@ -7,24 +7,26 @@
 Installer::Installer(GigachadParsed project) {
     this->project = project;
 
-    std::string path;
-    path.append(getenv("HOME"));
-    path.append("/.gigachad/bin/");
+    std::string path = std::string(getenv("HOME")) + "/.gigachad/bin";
 
     if (!std::filesystem::exists(path)) {
         std::filesystem::create_directories(path);
     }
 
-    std::string binaryLocation;
+    for (std::string binary : this->project.binaryNames) {
+        path = std::string(getenv("HOME")) + "/.gigachad/bin/";
 
-    binaryLocation.append(std::filesystem::current_path());
-    binaryLocation.append("/");
-    binaryLocation.append(this->project.binaryName);
+        std::string binaryLocation = std::string(std::filesystem::current_path()) + std::string("/") + binary;
 
-    path.append(this->project.binaryName);
+        if (!std::filesystem::exists(binaryLocation)) {
+            this->fail("Binary names in project.json either did not build or dont exist for some reason.");
+        }
 
-    std::cout << "Installing " << GREEN << this->project.binaryName << RESET << " to " << path << "\n";
-    std::filesystem::copy(binaryLocation, path);
+        path.append(binary);
+
+        std::cout << "Installing " << GREEN << binary << RESET << " to " << path << "\n";
+        std::filesystem::copy(binaryLocation, path);
+    }
 }
 
 Installer::~Installer() = default;

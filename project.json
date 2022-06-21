@@ -12,5 +12,8 @@
     "Parser/Parser.cpp",
     "Installer/Installer.cpp"
   ],
-  "binaryName": "gigachad"
+  "binaryNames": [
+    "gigachad"
+  ],
+  "mainBinary": "gigachad"
 }

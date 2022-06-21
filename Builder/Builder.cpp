@@ -17,7 +17,7 @@ std::string Builder::assembleCompileCommand() {
     }
     outputStr.append(this->project.compilerFlags);
     outputStr.append(" -o ");
-    outputStr.append(this->project.binaryName);
+    outputStr.append(this->project.mainBinary);
 
 
     return outputStr;
