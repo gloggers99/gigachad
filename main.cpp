@@ -1,7 +1,8 @@
 #include <iostream>
 
-#include "Gigachad.h"
+#include "Gigachad.hpp"
 
+// TODO: URGENT: fix optional json values
 // TODO: allow custom install directories (maybe not...)
 // TODO: automatically add install folder to $PATH (add to shellrc?)
 // TODO: built in updater for gigachad

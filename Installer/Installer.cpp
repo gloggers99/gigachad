@@ -2,7 +2,7 @@
 // Created by lucas on 6/18/22.
 //
 
-#include "Installer.h"
+#include "Installer.hpp"
 
 Installer::Installer(GigachadParsed project) {
     this->project = project;

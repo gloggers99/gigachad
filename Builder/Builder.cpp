@@ -2,9 +2,9 @@
 // Created by lucas on 6/18/22.
 //
 
-#include "Builder.h"
+#include "Builder.hpp"
 
-#include "../Colors.h"
+#include "../Colors.hpp"
 
 std::string Builder::assembleCompileCommand() {
     std::string outputStr;

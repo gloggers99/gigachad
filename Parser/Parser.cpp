@@ -2,7 +2,7 @@
 // Created by lucas on 6/18/22.
 //
 
-#include "Parser.h"
+#include "Parser.hpp"
 
 Parser::Parser(std::string inputFile) {
     std::ifstream file(inputFile);

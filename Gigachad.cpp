@@ -2,11 +2,11 @@
 // Created by lucas on 6/17/22.
 //
 
-#include "Builder/Builder.h"
-#include "Parser/Parser.h"
-#include "Installer/Installer.h"
+#include "Builder/Builder.hpp"
+#include "Parser/Parser.hpp"
+#include "Installer/Installer.hpp"
 
-#include "Gigachad.h"
+#include "Gigachad.hpp"
 
 void Gigachad::printHelp() {
     std::cout << "Gigachad v0.1-alpha\n"
