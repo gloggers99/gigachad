@@ -2,8 +2,8 @@
 // Created by lucas on 6/17/22.
 //
 
-#ifndef GIGACHAD_PARSER_H
-#define GIGACHAD_PARSER_H
+#ifndef PARSER_PARSER_H_
+#define PARSER_PARSER_H_
 
 #include <iostream>
 #include <fstream>
@@ -14,15 +14,15 @@
 #include "GigachadParsed.h"
 
 class Parser {
-private:
+ private:
     GigachadParsed output;
     void errorOut() { std::cout << "Config file isn't written right.\n"; exit(1); }
 
-public:
-    Parser(std::string inputFile);
+ public:
+    explicit Parser(std::string inputFile);
     GigachadParsed getOutput() { return this->output; }
     ~Parser();
 };
 
 
-#endif //GIGACHAD_PARSER_H
+#endif // PARSER_PARSER_H_

@@ -13,8 +13,7 @@
 // TODO: make man page
 // TODO: redirect help function to man page
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     Gigachad *gigachad = new Gigachad(argc, argv);
 
     return 0;

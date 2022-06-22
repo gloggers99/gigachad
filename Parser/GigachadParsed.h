@@ -2,8 +2,8 @@
 // Created by lucas on 6/17/22.
 //
 
-#ifndef GIGACHAD_GIGACHADPARSED_H
-#define GIGACHAD_GIGACHADPARSED_H
+#ifndef PARSER_GIGACHADPARSED_H_
+#define PARSER_GIGACHADPARSED_H_
 
 #include <vector>
 #include <string>
@@ -18,4 +18,4 @@ struct GigachadParsed {
     std::string mainBinary;
 };
 
-#endif //GIGACHAD_GIGACHADPARSED_H
+#endif // PARSER_GIGACHADPARSED_H_

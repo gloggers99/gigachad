@@ -1,24 +1,21 @@
-//
-// Created by lucas on 6/18/22.
-//
-
-#ifndef GIGACHAD_BUILDER_H
-#define GIGACHAD_BUILDER_H
+#ifndef BUILDER_BUILDER_H_
+#define BUILDER_BUILDER_H_
 
 #include <cstdlib>
 #include <iostream>
+#include <string>
 
 #include "../Parser/GigachadParsed.h"
 
 class Builder {
-private:
+ private:
     GigachadParsed project;
 
     std::string assembleCompileCommand();
-public:
-    Builder(GigachadParsed project);
+ public:
+    explicit Builder(GigachadParsed project);
     ~Builder();
 };
 
 
-#endif //GIGACHAD_BUILDER_H
+#endif // BUILDER_BUILDER_H_

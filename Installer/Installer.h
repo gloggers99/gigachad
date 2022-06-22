@@ -3,17 +3,18 @@
 //
 
 
-#ifndef GIGACHAD_INSTALLER_H
-#define GIGACHAD_INSTALLER_H
+#ifndef INSTALLER_INSTALLER_H_
+#define INSTALLER_INSTALLER_H_
 
 #include <iostream>
 #include <filesystem>
+#include <string>
 
 #include "../Colors.h"
 #include "../Parser/GigachadParsed.h"
 
 class Installer {
-private:
+ private:
     GigachadParsed project;
 
     void fail(std::string msg) {
@@ -21,10 +22,10 @@ private:
         exit(1);
     }
 
-public:
-    Installer(GigachadParsed project);
+ public:
+    explicit Installer(GigachadParsed project);
     ~Installer();
 };
 
 
-#endif //GIGACHAD_INSTALLER_H
+#endif // INSTALLER_INSTALLER_H_
