@@ -12,7 +12,6 @@
     "Parser/Parser.cpp",
     "Installer/Installer.cpp"
   ],
-  "compilerFormat": "%c %cf %s %o",
   "binaryNames": [
     "gigachad"
   ],

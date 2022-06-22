@@ -9,7 +9,7 @@
 std::string Builder::assembleCompileCommand() {
     std::string outputStr;
 
-    if (!this->project.compilerFlags.empty()) {
+    if (!this->project.compilerFormat.empty()) {
         outputStr = this->project.compilerFormat;
 
         outputStr.replace(outputStr.find("%c"), std::string("%c").length(), this->project.compiler);
