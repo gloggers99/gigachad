@@ -1,5 +1,4 @@
-#ifndef BUILDER_BUILDER_HPP_
-#define BUILDER_BUILDER_HPP_
+#pragma once
 
 #include <cstdlib>
 #include <iostream>
@@ -16,6 +15,3 @@ class Builder {
     explicit Builder(GigachadParsed project);
     ~Builder();
 };
-
-
-#endif // BUILDER_BUILDER_HPP_

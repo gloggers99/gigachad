@@ -3,8 +3,7 @@
 //
 
 
-#ifndef INSTALLER_INSTALLER_HPP_
-#define INSTALLER_INSTALLER_HPP_
+#pragma once
 
 #include <iostream>
 #include <filesystem>
@@ -18,7 +17,7 @@ class Installer {
     GigachadParsed project;
 
     void fail(std::string msg) {
-        std::cout << RED << "Error during installing: " << RESET << msg << "\n";
+        std::cerr << RED << "Error during installing: " << RESET << msg << std::endl;
         exit(1);
     }
 
@@ -26,6 +25,3 @@ class Installer {
     explicit Installer(GigachadParsed project);
     ~Installer();
 };
-
-
-#endif // INSTALLER_INSTALLER_HPP_

@@ -8,15 +8,22 @@
 
 #include "Gigachad.hpp"
 
-void Gigachad::printHelp() {
-    std::cout << "Gigachad v0.1-alpha\n"
-              << "RTFM lmao\n";
+/**
+ * Convention is for the function to be called 'usage' and print to error stream
+ * End std::cout statements with std::endl not just \n
+ * Better help message
+**/
+void Gigachad::usage() {
+    std::cerr << "Gigachad v0.1-alpha\n"
+              << "   build: build program\n"
+	      << "   install: install program\n"
+	      << "   help: print this menu" << std::endl;
 }
 
 Gigachad::Gigachad(int argc, char *argv[]) {
     /* Confirm project gigachad file exists*/
     if (!std::filesystem::exists("project.json")) {
-        std::cout << "You silly goose, there isn't a project in this directory!\n";
+        std::cout << "You silly goose, there isn't a project in this directory!" << std::endl;
         exit(1);
     }
 
@@ -30,10 +37,10 @@ Gigachad::Gigachad(int argc, char *argv[]) {
             Builder builder(parsedProjectFile);
             Installer installer(parsedProjectFile);
         } else if (strcmp(argv[1], "help") == 0) {
-            this->printHelp();
+            this->usage();
         }
     } else {
-        this->printHelp();
+        this->usage();
     }
 }
 
