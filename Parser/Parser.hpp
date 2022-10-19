@@ -2,8 +2,7 @@
 // Created by lucas on 6/17/22.
 //
 
-#ifndef PARSER_PARSER_HPP_
-#define PARSER_PARSER_HPP_
+#pragma once
 
 #include <iostream>
 #include <fstream>
@@ -16,13 +15,10 @@
 class Parser {
  private:
     GigachadParsed output;
-    void errorOut() { std::cout << "Config file isn't written right.\n"; exit(1); }
+    void errorOut() { std::cout << "Config file isn't written right." << std::endl; exit(1); }
 
  public:
     explicit Parser(std::string inputFile);
     GigachadParsed getOutput() { return this->output; }
     ~Parser();
 };
-
-
-#endif // PARSER_PARSER_HPP_

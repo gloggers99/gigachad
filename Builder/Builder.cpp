@@ -39,7 +39,7 @@ std::string Builder::assembleCompileCommand() {
 Builder::Builder(GigachadParsed project) {
     this->project = project;
 
-    std::cout << "Compiling " << GREEN << this->project.projectName << RESET << " (" << this->assembleCompileCommand() << ")\n";
+    std::cout << "Compiling " << GREEN << this->project.projectName << RESET << " (" << this->assembleCompileCommand() << ")" << std::endl;
     system(this->assembleCompileCommand().c_str());
 }
 

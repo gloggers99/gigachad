@@ -1,5 +1,4 @@
-#ifndef GIGACHAD_HPP_
-#define GIGACHAD_HPP_
+#pragma once
 
 #include <iostream>
 #include <filesystem>
@@ -7,11 +6,8 @@
 
 class Gigachad {
  private:
-        void printHelp();
+        void usage();
  public:
     Gigachad(int argc, char *argv[]);
     ~Gigachad();
 };
-
-
-#endif // GIGACHAD_HPP_
